@@ -1,4 +1,4 @@
-# Slack API from Allegro Common Lisp
+# Slack API for Allegro Common Lisp
 
 ## This is a fork
 
