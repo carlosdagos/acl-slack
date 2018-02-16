@@ -1,6 +1,6 @@
-;;;; cl-slack.lisp
+;;;; acl-slack.lisp
 
-(in-package #:cl-slack)
+(in-package #:acl-slack)
 
-;;; "cl-slack" goes here. Hacks and glory await!
+;;; "acl-slack" goes here. Hacks and glory await!
 

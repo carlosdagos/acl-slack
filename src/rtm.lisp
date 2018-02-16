@@ -1,9 +1,9 @@
-(in-package :cl-slack.rtm)
+(in-package :acl-slack.rtm)
 
-(defmethod start ((client cl-slack.core:slack-client)
+(defmethod start ((client acl-slack.core:slack-client)
                   (optionals list))
-  (cl-slack.core:send "rtm.start"
+  (acl-slack.core:send "rtm.start"
                       (format nil "?token=~A~A"
-                              (cl-slack.core:token client)
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:token client)
+                              (acl-slack.core:to-param optionals))))
 

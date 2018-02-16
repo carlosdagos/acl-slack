@@ -1,13 +1,13 @@
-(in-package :cl-slack.team)
+(in-package :acl-slack.team)
 
-(defmethod fetch-access-logs ((client cl-slack.core:slack-client)
+(defmethod fetch-access-logs ((client acl-slack.core:slack-client)
                               (optionals list))
-  (cl-slack.core:send "team.accessLogs"
+  (acl-slack.core:send "team.accessLogs"
                       (format nil "?token=~A~A"
-                              (cl-slack.core:token client)
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:token client)
+                              (acl-slack.core:to-param optionals))))
 
-(defmethod fetch-info ((client cl-slack.core:slack-client))
-  (cl-slack.core:send "team.info"
+(defmethod fetch-info ((client acl-slack.core:slack-client))
+  (acl-slack.core:send "team.info"
                       (format nil "?token=~A"
-                              (cl-slack.core:token client))))
+                              (acl-slack.core:token client))))

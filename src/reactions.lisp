@@ -1,33 +1,33 @@
-(in-package :cl-slack.reactions)
+(in-package :acl-slack.reactions)
 
-(defmethod add ((client cl-slack.core:slack-client)
+(defmethod add ((client acl-slack.core:slack-client)
                 (name string)
                 (optionals list))
-  (cl-slack.core:send "reactions.add"
+  (acl-slack.core:send "reactions.add"
                       (format nil "?token=~A&name=~A~A"
-                              (cl-slack.core:token client)
+                              (acl-slack.core:token client)
                               name
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:to-param optionals))))
 
-(defmethod get-item ((client cl-slack.core:slack-client)
+(defmethod get-item ((client acl-slack.core:slack-client)
                      (optionals list))
-  (cl-slack.core:send "reactions.add"
+  (acl-slack.core:send "reactions.add"
                       (format nil "?token=~A~A"
-                              (cl-slack.core:token client)
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:token client)
+                              (acl-slack.core:to-param optionals))))
 
-(defmethod fetch-list ((client cl-slack.core:slack-client)
+(defmethod fetch-list ((client acl-slack.core:slack-client)
                        (optionals list))
-  (cl-slack.core:send "reactions.list"
+  (acl-slack.core:send "reactions.list"
                       (format nil "?token=~A~A"
-                              (cl-slack.core:token client)
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:token client)
+                              (acl-slack.core:to-param optionals))))
 
-(defmethod remove-reaction ((client cl-slack.core:slack-client)
+(defmethod remove-reaction ((client acl-slack.core:slack-client)
                             (name string)
                             (optionals list))
-  (cl-slack.core:send "reactions.remove"
+  (acl-slack.core:send "reactions.remove"
                       (format nil "?token=~A&name=~A~A"
-                              (cl-slack.core:token client)
+                              (acl-slack.core:token client)
                               name
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:to-param optionals))))

@@ -1,4 +1,4 @@
-(in-package :cl-slack.api)
+(in-package :acl-slack.api)
 
-(defmethod test ((client cl-slack.core:slack-client))
-  (cl-slack.core:send "api.test" ""))
+(defmethod test ((client acl-slack.core:slack-client))
+  (acl-slack.core:send "api.test" ""))

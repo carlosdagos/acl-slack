@@ -1,4 +1,4 @@
-(in-package :cl-slack.auth)
+(in-package :acl-slack.auth)
 
-(defmethod test ((client cl-slack.core:slack-client))
-  (cl-slack.core:send "api.test" (format nil "?token=~A" (cl-slack.core:token client))))
+(defmethod test ((client acl-slack.core:slack-client))
+  (acl-slack.core:send "api.test" (format nil "?token=~A" (acl-slack.core:token client))))

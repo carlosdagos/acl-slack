@@ -1,12 +1,13 @@
-(in-package :cl-slack.core)
+(in-package :acl-slack.core)
 
-(defvar BASE_URL "https://slack.com/api/")
+(defvar *base-url* "https://slack.com/api/")
 
 (defclass slack-client ()
   ((token :accessor token :initarg :token)))
 
 (defun send (api-name param)
-  (dex:get (format nil "~A~A~A" BASE_URL api-name param)))
+  (net.aserve.client::do-http-request
+      (format nil "~A~A~A" *base-url* api-name param)))
 
 (defun to-param (list)
   (or (format nil "~{&~A=~A~}" list)

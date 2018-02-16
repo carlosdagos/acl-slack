@@ -1,26 +1,16 @@
-#+title: cl-slack
-Slack API from CommonLisp
+# Slack API from Allegro Common Lisp
 
-* how to use
+## This is a fork
 
-#brew install roswell
+This is a fork of https://github.com/m0cchi/cl-slack
 
-git clone https://github.com/m0cchi/cl-slack
+This fork is WIP.
 
-cd cl-slack
+It's intended to be used only in AllegroCL and has no external dependencies.
 
-ln -s $(pwd)/cl-slack.asd $HOME/.roswell/ALL/ALL/quicklisp/quicklisp/
+## Sample code
 
-
-* sample code
-
-#+begin_src CL
-#!/bin/sh
-#|-*- mode:lisp -*-|#
-#|
-exec ros -Q -- $0 "$@"
-|#
-
+```lisp
 (ql:quickload :cl-slack :silent t)
 
 (defvar token "xxxx-xxx-xxx-xxx")
@@ -34,5 +24,4 @@ exec ros -Q -- $0 "$@"
                               channel
                               (car argv)
                               '("as_user" "true")))
-;; ./post.ros MessageText
-#+begin_end
+```

@@ -1,26 +1,26 @@
-(in-package :cl-slack.pins)
+(in-package :acl-slack.pins)
 
-(defmethod add ((client cl-slack.core:slack-client)
+(defmethod add ((client acl-slack.core:slack-client)
                 (channel string)
                 (optionals list))
-  (cl-slack.core:send "pins.add"
+  (acl-slack.core:send "pins.add"
                       (format nil "?token=~A&channel=~A~A"
-                              (cl-slack.core:token client)
+                              (acl-slack.core:token client)
                               channel
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:to-param optionals))))
 
-(defmethod fetch-list ((client cl-slack.core:slack-client)
+(defmethod fetch-list ((client acl-slack.core:slack-client)
                       (channel string))
-  (cl-slack.core:send "pins.list"
+  (acl-slack.core:send "pins.list"
                       (format nil "?token=~A&channel=~A"
-                              (cl-slack.core:token client)
+                              (acl-slack.core:token client)
                               channel)))
 
-(defmethod remove-pin ((client cl-slack.core:slack-client)
+(defmethod remove-pin ((client acl-slack.core:slack-client)
                        (channel string)
                        (optionals list))
-  (cl-slack.core:send "pins.remove"
+  (acl-slack.core:send "pins.remove"
                       (format nil "?token=~A&channel=~A~A"
-                              (cl-slack.core:token client)
+                              (acl-slack.core:token client)
                               channel
-                              (cl-slack.core:to-param optionals))))
+                              (acl-slack.core:to-param optionals))))
