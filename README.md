@@ -25,3 +25,10 @@ It's intended to be used only in AllegroCL and has no external dependencies.
                               (car argv)
                               '("as_user" "true")))
 ```
+
+# TODO
+
+- Provide the client with a socket so it's not creating sockets willy-nilly and just reusing one (nice to use with socket pools later)
+- postMessage should actually use POST
+- include JSON lib (maybe Jonathan?), right now this thing is just returining text responses
+- Include support for rich message formatting
