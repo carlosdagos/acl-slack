@@ -14,13 +14,12 @@
                          (text string)
                          (optionals list))
   (acl-slack.core:send "chat.postMessage"
-                      (format nil "?token=~A&channel=~A&text=~A"
+                      (format nil "?token=~A&channel=~A&text=~A~A"
                               (acl-slack.core:token client)
                               channel
-                              (net.aserve:uriencode-string
-                               (concatenate 'string
-                                            text
-                                            (acl-slack.core:to-param optionals))))))
+                              (net.aserve:uriencode-string text)
+                              (acl-slack.core:to-param optionals))))
+
 
 
 (defmethod update-message ((client acl-slack.core:slack-client)
@@ -33,7 +32,5 @@
                               (acl-slack.core:token client)
                               ts
                               channel
-                              (net.aserve:uriencode-string
-                               (concatenate 'string
-                                            text
-                                            (acl-slack.core:to-param optionals))))))
+                              (net.aserve:uriencode-string text)
+                              (acl-slack.core:to-param optionals))))

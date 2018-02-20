@@ -23,7 +23,7 @@ It's intended to be used only in AllegroCL and has no external dependencies.
   (cl-slack.chat:post-message client
                               channel
                               (car argv)
-                              '("as_user" "true")))
+                              '(("as_user" . "true"))))
 ```
 
 # TODO

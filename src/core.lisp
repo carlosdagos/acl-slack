@@ -10,5 +10,8 @@
       (format nil "~A~A~A" *base-url* api-name param)))
 
 (defun to-param (list)
-  (or (format nil "~{&~A=~A~}" list)
-      ""))
+  (with-output-to-string (s)
+    (loop
+       for (key . value) in list
+       for value-encoded = (net.aserve:uriencode-string value)
+       do (format s "&~a=~a" key value-encoded))))
